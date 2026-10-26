@@ -1,0 +1,410 @@
+add_namespace = SLS_events
+
+# =============================================================================
+# Event 1: Deklaracja Wyrów (1936) - fires on game start for SLS
+# =============================================================================
+country_event = {
+	id = SLS_events.1
+	title = SLS_events.1.t
+	desc = SLS_events.1.desc
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = no
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLS
+		date > 1936.1.1
+		NOT = { has_country_flag = SLS_deklaracja_done }
+	}
+
+	mean_time_to_happen = { days = 5 }
+
+	# Option A: Close trade relations with Poland ("Węzeł Węglowy" buff)
+	option = {
+		name = SLS_events.1.a
+		POL = { add_opinion_modifier = { target = SLS modifier = SLS_alliance_opinion } }
+		add_stability = 0.05
+		set_country_flag = SLS_deklaracja_done
+		set_country_flag = SLS_trade_with_poland
+	}
+	# Option B: Isolation
+	option = {
+		name = SLS_events.1.b
+		remove_ideas = SLS_wezel_weglowy
+		add_political_power = 100
+		add_stability = -0.05
+		set_country_flag = SLS_deklaracja_done
+		set_country_flag = SLS_isolation
+	}
+}
+
+# =============================================================================
+# Event 2: Kryzys na Granicy Zachodniej (1938)
+# =============================================================================
+country_event = {
+	id = SLS_events.2
+	title = SLS_events.2.t
+	desc = SLS_events.2.desc
+	picture = GFX_report_event_generic_fortress
+
+	is_triggered_only = no
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLS
+		date > 1938.3.1
+		GER = { has_completed_focus = GER_demand_sudetenland }
+	}
+
+	mean_time_to_happen = { days = 14 }
+
+	# Mobilize and build forts
+	option = {
+		name = SLS_events.2.a
+		762 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 506
+			}
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = 6464
+			}
+		}
+		army_experience = 10
+		add_war_support = 0.10
+		add_manpower = 10000
+	}
+	# Diplomatic approach
+	option = {
+		name = SLS_events.2.b
+		add_political_power = 75
+		add_stability = 0.05
+		ENG = { country_event = { id = SLS_events.5 days = 7 } }
+	}
+}
+
+# =============================================================================
+# Event 3: Uchodźcy ze Wschodu i Zachodu (dynamic, war-triggered)
+# =============================================================================
+country_event = {
+	id = SLS_events.3
+	title = SLS_events.3.t
+	desc = SLS_events.3.desc
+	picture = GFX_report_event_generic_refugees
+
+	is_triggered_only = no
+	fire_only_once = no
+
+	trigger = {
+		tag = SLS
+		has_war = no
+		OR = {
+			POL = { has_war = yes }
+			GER = { has_war = yes }
+			CZE = { has_war = yes }
+		}
+		NOT = { has_country_flag = SLS_refugees_recently }
+	}
+
+	mean_time_to_happen = { days = 60 }
+
+	# Accept refugees
+	option = {
+		name = SLS_events.3.a
+		add_manpower = 15000
+		add_stability = -0.03
+		set_country_flag = { flag = SLS_refugees_recently days = 180 value = 1 }
+	}
+	# Close borders
+	option = {
+		name = SLS_events.3.b
+		add_stability = 0.02
+		add_political_power = 25
+		set_country_flag = { flag = SLS_refugees_recently days = 180 value = 1 }
+	}
+}
+
+# =============================================================================
+# Event 4: Rozwój Infrastruktury Wyrów
+# =============================================================================
+country_event = {
+	id = SLS_events.4
+	title = SLS_events.4.t
+	desc = SLS_events.4.desc
+	picture = GFX_report_event_generic_construction
+
+	is_triggered_only = no
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLS
+		date > 1937.1.1
+		political_power > 100
+	}
+
+	mean_time_to_happen = { days = 30 }
+
+	# Build factories
+	option = {
+		name = SLS_events.4.a
+		add_political_power = -100
+		762 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	# Build infrastructure
+	option = {
+		name = SLS_events.4.b
+		add_political_power = -75
+		762 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	# Save resources
+	option = {
+		name = SLS_events.4.c
+		add_political_power = 25
+	}
+}
+
+# =============================================================================
+# Event 5: Allied response to Silesian plea
+# =============================================================================
+country_event = {
+	id = SLS_events.5
+	title = SLS_events.5.t
+	desc = SLS_events.5.desc
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	# Guarantee Silesia
+	option = {
+		name = SLS_events.5.a
+		ai_chance = { factor = 50 }
+		ENG = { give_guarantee = SLS }
+		FRA = { give_guarantee = SLS }
+		SLS = { country_event = { id = SLS_events.6 } }
+	}
+	# Refuse
+	option = {
+		name = SLS_events.5.b
+		ai_chance = { factor = 50 }
+		SLS = { country_event = { id = SLS_events.7 } }
+	}
+}
+
+# Event 6: Allies will help
+country_event = {
+	id = SLS_events.6
+	title = SLS_events.6.t
+	desc = SLS_events.6.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.6.a
+		add_stability = 0.10
+		add_war_support = 0.05
+	}
+}
+
+# Event 7: Allies refused
+country_event = {
+	id = SLS_events.7
+	title = SLS_events.7.t
+	desc = SLS_events.7.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.7.a
+		add_stability = -0.05
+		add_political_power = 50
+	}
+}
+
+# =============================================================================
+# Event 10: Poland receives alliance proposal
+# =============================================================================
+country_event = {
+	id = SLS_events.10
+	title = SLS_events.10.t
+	desc = SLS_events.10.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = SLS_events.10.a
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.1
+				SLS = { NOT = { has_government = democratic } }
+			}
+		}
+		POL = {
+			add_opinion_modifier = { target = SLS modifier = SLS_alliance_opinion }
+			give_guarantee = SLS
+		}
+		SLS = { country_event = { id = SLS_events.11 } }
+	}
+	# Refuse
+	option = {
+		name = SLS_events.10.b
+		ai_chance = { factor = 20 }
+		SLS = { country_event = { id = SLS_events.12 } }
+	}
+}
+
+# Event 11: Poland accepted
+country_event = {
+	id = SLS_events.11
+	title = SLS_events.11.t
+	desc = SLS_events.11.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.11.a
+		add_stability = 0.05
+		add_political_power = 25
+	}
+}
+
+# Event 12: Poland refused
+country_event = {
+	id = SLS_events.12
+	title = SLS_events.12.t
+	desc = SLS_events.12.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.12.a
+		add_stability = -0.05
+	}
+}
+
+# =============================================================================
+# Event 20: Soviet response to Silesian delegation
+# =============================================================================
+country_event = {
+	id = SLS_events.20
+	title = SLS_events.20.t
+	desc = SLS_events.20.desc
+	picture = GFX_report_event_generic_soviet_politics
+	is_triggered_only = yes
+
+	# Accept into Comintern
+	option = {
+		name = SLS_events.20.a
+		ai_chance = { factor = 70 }
+		SOV = { add_to_faction = SLS }
+		SLS = { country_event = { id = SLS_events.21 } }
+	}
+	# Refuse
+	option = {
+		name = SLS_events.20.b
+		ai_chance = { factor = 30 }
+		SLS = { country_event = { id = SLS_events.22 } }
+	}
+}
+
+# Event 21: Soviets accepted
+country_event = {
+	id = SLS_events.21
+	title = SLS_events.21.t
+	desc = SLS_events.21.desc
+	picture = GFX_report_event_generic_soviet_politics
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.21.a
+		add_stability = 0.05
+		add_war_support = 0.10
+	}
+}
+
+# Event 22: Soviets refused
+country_event = {
+	id = SLS_events.22
+	title = SLS_events.22.t
+	desc = SLS_events.22.desc
+	picture = GFX_report_event_generic_soviet_politics
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.22.a
+		add_stability = -0.05
+	}
+}
+
+# =============================================================================
+# Event 30: Germany receives Pakt z Diabłem proposal
+# =============================================================================
+country_event = {
+	id = SLS_events.30
+	title = SLS_events.30.t
+	desc = SLS_events.30.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+
+	# Accept pact
+	option = {
+		name = SLS_events.30.a
+		ai_chance = { factor = 40 }
+		GER = {
+			add_opinion_modifier = { target = SLS modifier = SLS_alliance_opinion }
+			give_guarantee = SLS
+		}
+		SLS = { country_event = { id = SLS_events.31 } }
+	}
+	# Refuse and gain wargoal
+	option = {
+		name = SLS_events.30.b
+		ai_chance = { factor = 60 }
+		create_wargoal = { type = annex_everything target = SLS }
+		SLS = { country_event = { id = SLS_events.32 } }
+	}
+}
+
+# Event 31: Germany accepted pact
+country_event = {
+	id = SLS_events.31
+	title = SLS_events.31.t
+	desc = SLS_events.31.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.31.a
+		create_wargoal = { type = annex_everything target = POL }
+		add_war_support = 0.15
+	}
+}
+
+# Event 32: Germany refused - war imminent
+country_event = {
+	id = SLS_events.32
+	title = SLS_events.32.t
+	desc = SLS_events.32.desc
+	picture = GFX_report_event_generic_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = SLS_events.32.a
+		add_war_support = 0.20
+		add_stability = -0.10
+		add_manpower = 20000
+	}
+}
+

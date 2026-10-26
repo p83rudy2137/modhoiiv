@@ -1,0 +1,16 @@
+# Silesian equipment names
+SLS_infantry_weapons = {
+	name = "Karabin Gwarek"
+}
+SLS_infantry_weapons_1 = {
+	name = "PM Beblok"
+}
+SLS_motorized_equipment = {
+	name = "Ciężarówka Cug"
+}
+SLS_light_tank_equipment = {
+	name = "Skarbek"
+}
+SLS_medium_tank_equipment = {
+	name = "Korfanty"
+}

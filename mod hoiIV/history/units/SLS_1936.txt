@@ -1,0 +1,48 @@
+division_template = {
+	name = "Dywizja Piechoty Śląskiej"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineers = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Brygada Górnicza"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		engineers = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Dywizja Piechoty Śląskiej"
+		location = 506
+		division_template = "Dywizja Piechoty Śląskiej"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Dywizja Piechoty Śląskiej"
+		location = 506
+		division_template = "Dywizja Piechoty Śląskiej"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "1. Brygada Górnicza"
+		location = 6464
+		division_template = "Brygada Górnicza"
+		start_experience_factor = 0.1
+	}
+}

@@ -1,0 +1,41 @@
+characters = {
+	SLS_wojciech_korfanty = {
+		name = "Wojciech Korfanty"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SLS/Portrait_Wojciech_Korfanty.dds"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			traits = { popular_figurehead silent_workhorse }
+		}
+	}
+	SLS_komitet_robotniczy = {
+		name = "Śląski Komitet Robotniczy"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SLS/Portrait_Komitet_Robotniczy.dds"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			expire = "1965.1.1"
+			traits = { }
+		}
+	}
+	SLS_dowodztwo_powstancze = {
+		name = "Dowództwo Powstańcze"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SLS/Portrait_Powstancy.dds"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+			traits = { }
+		}
+	}
+}

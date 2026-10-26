@@ -1,0 +1,33 @@
+SLS_INF_01 = {
+	name = "Dywizja Piechoty Śląskiej"
+	for_countries = { SLS }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Dywizja Piechoty Śląskiej"
+
+	link_numbering_with = { SLS_INF_01 }
+
+	ordered = {
+		1 = { "%d. Dywizja Piechoty Śląskiej" }
+		2 = { "%d. Dywizja Piechoty Śląskiej" }
+		3 = { "%d. Dywizja Piechoty Śląskiej" }
+		4 = { "%d. Dywizja Piechoty Śląskiej" }
+		5 = { "%d. Dywizja Piechoty Śląskiej" }
+	}
+}
+
+SLS_MIL_01 = {
+	name = "Brygada Górnicza"
+	for_countries = { SLS }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Brygada Górnicza"
+
+	ordered = {
+		1 = { "%d. Brygada Górnicza" }
+		2 = { "%d. Brygada Górnicza" }
+		3 = { "%d. Brygada Górnicza" }
+	}
+}

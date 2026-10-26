@@ -1,0 +1,17 @@
+SLS_expansjonizm_category = {
+	icon = generic_propaganda
+	picture = GFX_decision_cat_generic_crisis
+
+	allowed = {
+		original_tag = SLS
+	}
+}
+
+SLS_rozwoj_przemyslu_category = {
+	icon = generic_industry
+	picture = GFX_decision_cat_generic_industry
+
+	allowed = {
+		original_tag = SLS
+	}
+}

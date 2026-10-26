@@ -1,0 +1,73 @@
+﻿l_english:
+ SLS_events.1.t:0 "Declaration of Wyry: A New Chapter"
+ SLS_events.1.desc:0 "The Upper Silesian industrial basin has proclaimed the independent Silesian Republic, establishing its government in Wyry. The peaceful secession guarantees mutual coal exports and non-aggression with Poland. How shall we define our opening foreign stance?"
+ SLS_events.1.a:0 "Honor the Coal Hub pact and maintain brotherly ties with Poland."
+ SLS_events.1.b:0 "Proclaim total neutrality and break commercial dependency."
+
+ SLS_events.2.t:0 "Western Border Crisis"
+ SLS_events.2.desc:0 "As the Third Reich intensifies pressure on Central Europe following the Sudetenland crisis, German divisions mass along our western perimeter. Silesia's coal and steel are in direct danger!"
+ SLS_events.2.a:0 "Issue emergency mobilization orders and fortify Wyry and Katowice!"
+ SLS_events.2.b:0 "Seek diplomatic mediation through the Western Powers."
+
+ SLS_events.3.t:0 "Refugees on Silesian Soil"
+ SLS_events.3.desc:0 "War ravages our neighbors. Thousands of civilian refugees and skilled laborers seek shelter in the neutral factories and valleys of Silesia."
+ SLS_events.3.a:0 "Admit them: our factories and mines need every pair of hands!"
+ SLS_events.3.b:0 "Close the checkpoints to preserve social stability."
+
+ SLS_events.4.t:0 "Modernization of Wyry and the Basin"
+ SLS_events.4.desc:0 "With political stability assured, our planners present ambitious blueprint proposals for the urban and industrial expansion of Wyry and Katowice."
+ SLS_events.4.a:0 "Build heavy industrial complexes!"
+ SLS_events.4.b:0 "Modernize the rail and road network."
+ SLS_events.4.c:0 "Conserve our treasury for military contingencies."
+
+ SLS_events.5.t:0 "Silesian Request for Security Guarantees"
+ SLS_events.5.desc:0 "The Silesian Republic has formally requested Anglo-French security guarantees against German revanchism in exchange for uninterrupted coal shipments."
+ SLS_events.5.a:0 "We guarantee Silesian sovereignty."
+ SLS_events.5.b:0 "We cannot overextend our commitments in the East."
+
+ SLS_events.6.t:0 "Allied Guarantee Granted"
+ SLS_events.6.desc:0 "London and Paris have officially extended military guarantees to the Silesian Republic. Our borders are safeguarded by the Western Democracies!"
+ SLS_events.6.a:0 "A diplomatic triumph for Silesia!"
+
+ SLS_events.7.t:0 "Allied Guarantee Refused"
+ SLS_events.7.desc:0 "The Western Powers have declined our request for guarantees, leaving us to rely entirely on our own strength."
+ SLS_events.7.a:0 "We shall defend our soil alone!"
+
+ SLS_events.10.t:0 "Silesian Mutual Defense Proposal"
+ SLS_events.10.desc:0 "The Silesian Republic offers Poland a binding bilateral defense alliance and economic partnership to counter shared threats."
+ SLS_events.10.a:0 "Accept the alliance with our Silesian brothers."
+ SLS_events.10.b:0 "Decline: we must keep our diplomatic options open."
+
+ SLS_events.11.t:0 "Poland Accepts Mutual Defense"
+ SLS_events.11.desc:0 "Warsaw has embraced our proposal. Silesia and Poland stand shoulder to shoulder against any invader!"
+ SLS_events.11.a:0 "Solidarity preserves our freedom!"
+
+ SLS_events.12.t:0 "Poland Declines the Alliance"
+ SLS_events.12.desc:0 "Warsaw has politely declined a binding alliance, citing existing international obligations."
+ SLS_events.12.a:0 "A disappointing decision."
+
+ SLS_events.20.t:0 "Silesian Delegation in Moscow"
+ SLS_events.20.desc:0 "Envoys from the Silesian Workers' Committee have arrived in Moscow requesting formal accession into the Communist International."
+ SLS_events.20.a:0 "Welcome the Silesian proletariat into the Comintern!"
+ SLS_events.20.b:0 "Reject the request: the timing is ill-advised."
+
+ SLS_events.21.t:0 "Comintern Membership Accepted"
+ SLS_events.21.desc:0 "Moscow welcomes the Silesian People's Republic into the Comintern! Red Silesia joins the vanguard of the world proletariat."
+ SLS_events.21.a:0 "Proletarians of all lands, unite!"
+
+ SLS_events.22.t:0 "Moscow Rebuffs Our Envoys"
+ SLS_events.22.desc:0 "The Soviet government has declined our bid for Comintern membership."
+ SLS_events.22.a:0 "We shall forge socialism on our own terms."
+
+ SLS_events.30.t:0 "Silesian Offer of Non-Aggression and Partition"
+ SLS_events.30.desc:0 "The nationalist leadership in Wyry proposes a pragmatic understanding with the Reich: mutual non-aggression and coordinated partition of neighboring border territories."
+ SLS_events.30.a:0 "Accept the pact with the Silesians."
+ SLS_events.30.b:0 "Outrageous! Silesia is rightful German land; crush them!"
+
+ SLS_events.31.t:0 "Berlin Accepts the Pact"
+ SLS_events.31.desc:0 "Berlin has confirmed acceptance of our non-aggression and cooperation agreement. Our northern and western flanks are temporarily secured."
+ SLS_events.31.a:0 "Now we turn our attention east and south!"
+
+ SLS_events.32.t:0 "Berlin Threatens Destruction"
+ SLS_events.32.desc:0 "Adolf Hitler has furiously rejected our proposal, declaring Silesia to be an illegitimate rebel entity that will be crushed under the tracks of the Wehrmacht!"
+ SLS_events.32.a:0 "Man the bunkers! Death before surrender!"

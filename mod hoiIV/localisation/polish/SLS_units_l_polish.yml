@@ -1,0 +1,10 @@
+﻿l_polish:
+ sls_gorniczy_saperzy:0 "Górnicze Bataliony Saperów"
+ sls_gorniczy_saperzy_desc:0 "Elitarne kompanie inżynieryjne sformowane z doświadczonych górników, wyspecjalizowane w szturmie na fortyfikacje oraz w walkach miejskich."
+ sls_powstancy:0 "Powstańcy Śląscy"
+ sls_powstancy_desc:0 "Zdeterminowane formacje obrony terytorialnej wyszkolone w walkach o osiedla, hałdy i lasy, kultywujące tradycje Powstań Śląskich."
+ infantry_weapons_SLS:0 "Karabin Gwarek"
+ infantry_weapons_1_SLS:0 "Pistolet Maszynowy Beblok"
+ motorized_equipment_SLS:0 "Ciężarówka Cug"
+ light_tank_chassis_SLS:0 "Czołg Lekki Skarbek"
+ medium_tank_chassis_SLS:0 "Czołg Średni Korfanty"

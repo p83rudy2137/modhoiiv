@@ -1,0 +1,92 @@
+# AI Strategy towards Silesia
+
+POL_sls_friendly_strategy = {
+	allowed = {
+		original_tag = POL
+	}
+	enable = {
+		country_exists = SLS
+	}
+	abort = {
+		NOT = { country_exists = SLS }
+	}
+	ai_strategy = {
+		type = befriend
+		id = "SLS"
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SLS"
+		value = 50
+	}
+}
+
+GER_sls_conquest_strategy = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		country_exists = SLS
+		has_government = fascism
+	}
+	abort = {
+		NOT = { country_exists = SLS }
+	}
+	ai_strategy = {
+		type = conquer
+		id = "SLS"
+		value = 150
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "SLS"
+		value = 100
+	}
+}
+
+CZE_sls_trade_strategy = {
+	allowed = {
+		original_tag = CZE
+	}
+	enable = {
+		country_exists = SLS
+	}
+	abort = {
+		NOT = { country_exists = SLS }
+	}
+	ai_strategy = {
+		type = befriend
+		id = "SLS"
+		value = 50
+	}
+}
+
+SLS_defense_strategy = {
+	allowed = {
+		original_tag = SLS
+	}
+	enable = {
+		country_exists = SLS
+	}
+	ai_strategy = {
+		type = befriend
+		id = "POL"
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "GER"
+		value = 100
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = infantry
+		value = 60
+	}
+	ai_strategy = {
+		type = build_building
+		id = bunker
+		value = 100
+	}
+}

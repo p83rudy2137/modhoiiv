@@ -1,0 +1,14 @@
+opinion_modifiers = {
+	SLS_alliance_opinion = {
+		value = 50
+	}
+	SLS_trade_opinion = {
+		value = 25
+	}
+	SLS_hostile_opinion = {
+		value = -30
+	}
+	SLS_hostile_50_opinion = {
+		value = -50
+	}
+}

@@ -1,0 +1,73 @@
+﻿l_polish:
+ SLS_events.1.t:0 "Deklaracja Wyrów - Nowy Rozdział"
+ SLS_events.1.desc:0 "Górnośląski obszar przemysłowy proklamował autonomiczną Republikę Śląską z rządem w Wyrach. Pokojowa secesja gwarantuje wolny handel węglem i pakt o nieagresji z Polską. Jak ułożymy nasze relacje międzynarodowe?"
+ SLS_events.1.a:0 "Wypełniajmy pakt Węzła Węglowego i pielęgnujmy przyjaźń z Polską."
+ SLS_events.1.b:0 "Ogłośmy całkowitą neutralność i zerwijmy zależność handlową."
+
+ SLS_events.2.t:0 "Kryzys na Granicy Zachodniej"
+ SLS_events.2.desc:0 "Po zajęciu Sudetów przez III Rzeszę rośnie napięcie na naszej zachodniej granicy. Niemieckie dywizje koncentrują się nad Odrą. Śląski przemysł ciężki znajduje się w bezpośrednim zagrożeniu!"
+ SLS_events.2.a:0 "Ogłosić alarmową mobilizację i ufortyfikować Wyry oraz Katowice!"
+ SLS_events.2.b:0 "Szukać mediacji dyplomatycznej na Zachodzie."
+
+ SLS_events.3.t:0 "Uchodźcy ze Wschodu i Zachodu"
+ SLS_events.3.desc:0 "Wojna zbiera krwawe żniwo u naszych sąsiadów. Tysiące uchodźców i wykwalifikowanych robotników szuka schronienia w neutralnej Republice Śląskiej."
+ SLS_events.3.a:0 "Przyjąć ich: nasze kopalnie i huty potrzebują rąk do pracy!"
+ SLS_events.3.b:0 "Uszczelnić granice w trosce o porządek wewnętrzny."
+
+ SLS_events.4.t:0 "Rozwój Infrastruktury Wyrów"
+ SLS_events.4.desc:0 "Dzięki stabilności budżetowej nasi planiści przedstawiają ambitny plan modernizacji stołecznych Wyrów oraz całego okręgu przemysłowego."
+ SLS_events.4.a:0 "Zbudować nowe zakłady przemysłowe!"
+ SLS_events.4.b:0 "Zmodernizować sieć kolejową i drogową."
+ SLS_events.4.c:0 "Zatrzymać rezerwy na wypadek konfliktu zbrojnego."
+
+ SLS_events.5.t:0 "Śląska Prośba o Gwarancje Bezpieczeństwa"
+ SLS_events.5.desc:0 "Republika Śląska wystosowała oficjalną prośbę o brytyjsko-francuskie gwarancje niepodległości w zamian za nieprzerwane dostawy węgla i stali."
+ SLS_events.5.a:0 "Udzielamy gwarancji niepodległości Śląskowi."
+ SLS_events.5.b:0 "Nie możemy zaciągać dalszych zobowiązań na Wschodzie."
+
+ SLS_events.6.t:0 "Alianci Udzielają Gwarancji"
+ SLS_events.6.desc:0 "Londyn i Paryż oficjalnie ogłosiły objęcie Republiki Śląskiej gwarancjami bezpieczeństwa. Zachód stanie po naszej stronie!"
+ SLS_events.6.a:0 "Wielki sukces śląskiej dyplomacji!"
+
+ SLS_events.7.t:0 "Alianci Odmawiają Gwarancji"
+ SLS_events.7.desc:0 "Mocarstwa zachodnie odmówiły udzielenia nam gwarancji. W obronie naszej ziemi musimy polegać wyłącznie na sobie."
+ SLS_events.7.a:0 "Sami obronimy naszą ojczyznę!"
+
+ SLS_events.10.t:0 "Śląska Propozycja Sojuszu Obronnego"
+ SLS_events.10.desc:0 "Republika Śląska proponuje Polsce dwustronny pakt wzajemnej pomocy i sojusz wojskowy przeciwko wspólnym zagrożeniom."
+ SLS_events.10.a:0 "Przyjąć sojusz ze śląskimi braćmi."
+ SLS_events.10.b:0 "Odrzucić propozycję."
+
+ SLS_events.11.t:0 "Polska Akceptuje Sojusz"
+ SLS_events.11.desc:0 "Warszawa przyjęła naszą ofertę. Śląsk i Polska staną ramię w ramię przeciwko każdemu najeźdźcy!"
+ SLS_events.11.a:0 "Braterstwo broni obroni wolność!"
+
+ SLS_events.12.t:0 "Polska Odrzuca Sojusz"
+ SLS_events.12.desc:0 "Władze w Warszawie odmówiły zawarcia sojuszu wojskowego."
+ SLS_events.12.a:0 "Trudno, musimy radzić sobie sami."
+
+ SLS_events.20.t:0 "Śląska Delegacja w Moskwie"
+ SLS_events.20.desc:0 "Przedstawiciele Śląskiego Komitetu Robotniczego przybyli na Kreml z wnioskiem o przyjęcie do Kominternu."
+ SLS_events.20.a:0 "Przyjąć śląski proletariat do Kominternu!"
+ SLS_events.20.b:0 "Odrzucić delegację: to nie jest właściwy moment."
+
+ SLS_events.21.t:0 "Śląsk Przyjęty do Kominternu"
+ SLS_events.21.desc:0 "Moskwa wita Śląską Republikę Ludową w szeregach Międzynarodówki Komunistycznej!"
+ SLS_events.21.a:0 "Proletariusze wszystkich krajów, łączcie się!"
+
+ SLS_events.22.t:0 "Moskwa Odrzuca Delegację"
+ SLS_events.22.desc:0 "Władze radzieckie odrzuciły naszą prośbę o dołączenie do Kominternu."
+ SLS_events.22.a:0 "Będziemy budować socjalizm własnymi siłami."
+
+ SLS_events.30.t:0 "Śląska Propozycja Paktu i Podziału"
+ SLS_events.30.desc:0 "Śląskie władze powstańcze składają Berlinowi propozycję pragmatycznego układu o nieagresji i wspólnym podziale stref wpływów."
+ SLS_events.30.a:0 "Przyjąć pakt ze Śląskiem."
+ SLS_events.30.b:0 "Niedoczekanie! Śląsk to niemiecka ziemia; zmiażdżyć ich!"
+
+ SLS_events.31.t:0 "Berlin Akceptuje Pakt"
+ SLS_events.31.desc:0 "Berlin podpisał porozumienie o nieagresji i współpracy. Nasza flanka zachodnia i północna są zabezpieczone."
+ SLS_events.31.a:0 "Pakt z Diabłem wszedł w życie!"
+
+ SLS_events.32.t:0 "Berlin Żąda Bezwzględnej Kapitulacji"
+ SLS_events.32.desc:0 "Adolf Hitler wpadł we wściekłość na wieść o naszej propozycji i wydał rozkaz zniszczenia Republiki Śląskiej!"
+ SLS_events.32.a:0 "Do bunkrów! Prędzej giniemy niż oddamy Wyry!"

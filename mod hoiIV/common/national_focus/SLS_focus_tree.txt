@@ -1,0 +1,545 @@
+focus_tree = {
+	id = slask_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SLS
+		}
+	}
+	default = no
+
+	# =========================================================================
+	# BRANCH A: INDUSTRIAL-MILITARY (shared, x=5)
+	# =========================================================================
+	focus = {
+		id = SLS_rozbudowa_huty_batory
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 0
+		cost = 10
+		completion_reward = {
+			762 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_weglowe_el_dorado
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SLS_rozbudowa_huty_batory }
+		x = 5
+		y = 1
+		cost = 10
+		completion_reward = {
+			762 = {
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_inwestycje_w_motoryzacje
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SLS_weglowe_el_dorado }
+		x = 4
+		y = 2
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = mot_bonus
+				bonus = 1.0
+				uses = 2
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_wlasna_siec_logistyczna
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SLS_weglowe_el_dorado }
+		x = 6
+		y = 2
+		cost = 10
+		completion_reward = {
+			762 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_gwardia_obywatelska
+		icon = GFX_goal_generic_allies_702
+		prerequisite = { focus = SLS_inwestycje_w_motoryzacje }
+		x = 4
+		y = 3
+		cost = 10
+		completion_reward = {
+			add_ideas = SLS_gwardia_idea
+		}
+	}
+
+	focus = {
+		id = SLS_inzynieria_gornicza
+		icon = GFX_goal_generic_fortify_coastline
+		prerequisite = { focus = SLS_wlasna_siec_logistyczna }
+		x = 6
+		y = 3
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = fort_bonus
+				bonus = 1.0
+				uses = 2
+				category = construction_tech
+			}
+			762 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3534
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_modernizacja_sprzetu
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SLS_gwardia_obywatelska }
+		prerequisite = { focus = SLS_inzynieria_gornicza }
+		x = 5
+		y = 4
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	# =========================================================================
+	# BRANCH B: DEMOCRATIC "Szwajcaria Wschodu" (x=11)
+	# =========================================================================
+	focus = {
+		id = SLS_slaski_cud_gospodarczy
+		icon = GFX_goal_generic_consumer_goods
+		x = 11
+		y = 0
+		cost = 10
+		available = {
+			has_government = democratic
+		}
+		mutually_exclusive = {
+			focus = SLS_strajk_generalny
+			focus = SLS_slaska_sila_zbrojna
+			focus = SLS_slask_dla_slazakow
+		}
+		completion_reward = {
+			add_stability = 0.15
+			762 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_pakt_z_warszawa
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = SLS_slaski_cud_gospodarczy }
+		x = 10
+		y = 1
+		cost = 10
+		completion_reward = {
+			POL = {
+				country_event = { id = SLS_events.10 }
+				add_opinion_modifier = { target = SLS modifier = SLS_alliance_opinion }
+			}
+			give_guarantee = POL
+		}
+	}
+
+	focus = {
+		id = SLS_eksport_wegla
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = SLS_slaski_cud_gospodarczy }
+		x = 12
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_timed_idea = {
+				idea = SLS_coal_export
+				days = 730
+			}
+			ENG = { add_opinion_modifier = { target = SLS modifier = SLS_trade_opinion } }
+			FRA = { add_opinion_modifier = { target = SLS modifier = SLS_trade_opinion } }
+		}
+	}
+
+	focus = {
+		id = SLS_gwarancje_zachodu
+		icon = GFX_goal_generic_diplomatic_treaty
+		prerequisite = { focus = SLS_pakt_z_warszawa }
+		x = 10
+		y = 2
+		cost = 10
+		completion_reward = {
+			ENG = { give_guarantee = SLS }
+			FRA = { give_guarantee = SLS }
+		}
+	}
+
+	focus = {
+		id = SLS_zbrojownia_europy
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SLS_gwarancje_zachodu }
+		prerequisite = { focus = SLS_eksport_wegla }
+		x = 11
+		y = 3
+		cost = 10
+		completion_reward = {
+			add_ideas = SLS_zbrojownia_idea
+			762 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# =========================================================================
+	# BRANCH C: COMMUNIST "Górnośląski Syndykat" (x=17)
+	# =========================================================================
+	focus = {
+		id = SLS_strajk_generalny
+		icon = GFX_goal_support_communism
+		x = 17
+		y = 0
+		cost = 10
+		mutually_exclusive = {
+			focus = SLS_slaski_cud_gospodarczy
+			focus = SLS_slaska_sila_zbrojna
+			focus = SLS_slask_dla_slazakow
+		}
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.30 }
+			set_politics = { ruling_party = communism elections_allowed = no }
+			add_stability = -0.10
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SLS_nacjonalizacja_kopaln
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = SLS_strajk_generalny }
+		x = 17
+		y = 1
+		cost = 10
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SLS_wezel_weglowy
+				add_idea = SLS_nacjonalizacja_kopaln_idea
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_czerwona_gwardia
+		icon = GFX_goal_generic_army_change
+		prerequisite = { focus = SLS_nacjonalizacja_kopaln }
+		x = 16
+		y = 2
+		cost = 10
+		completion_reward = {
+			add_manpower = 50000
+			army_experience = 25
+			add_ideas = SLS_czerwona_gwardia_idea
+		}
+	}
+
+	focus = {
+		id = SLS_delegacja_do_moskwy
+		icon = GFX_goal_generic_soviet_alliance
+		prerequisite = { focus = SLS_nacjonalizacja_kopaln }
+		x = 18
+		y = 2
+		cost = 10
+		completion_reward = {
+			SOV = {
+				country_event = { id = SLS_events.20 }
+				add_opinion_modifier = { target = SLS modifier = SLS_alliance_opinion }
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SLS_eksport_rewolucji
+		icon = GFX_goal_generic_war_with_capita
+		prerequisite = { focus = SLS_czerwona_gwardia }
+		prerequisite = { focus = SLS_delegacja_do_moskwy }
+		x = 17
+		y = 3
+		cost = 10
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = POL }
+			create_wargoal = { type = annex_everything target = CZE }
+		}
+	}
+
+	# =========================================================================
+	# BRANCH D: NATIONALIST "Wielki Śląsk" (x=23)
+	# =========================================================================
+	focus = {
+		id = SLS_slaska_sila_zbrojna
+		icon = GFX_goal_generic_demand_territory
+		x = 23
+		y = 0
+		cost = 10
+		mutually_exclusive = {
+			focus = SLS_slaski_cud_gospodarczy
+			focus = SLS_strajk_generalny
+			focus = SLS_slask_dla_slazakow
+		}
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.25 }
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			add_ideas = SLS_militaryzm_idea
+		}
+	}
+
+	focus = {
+		id = SLS_roszczenia_zaolzie
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = SLS_slaska_sila_zbrojna }
+		x = 22
+		y = 1
+		cost = 10
+		completion_reward = {
+			create_wargoal = { type = take_state target = CZE generator = { 75 } }
+			CZE = { add_opinion_modifier = { target = SLS modifier = SLS_hostile_opinion } }
+		}
+	}
+
+	focus = {
+		id = SLS_pakt_z_diablem
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = SLS_slaska_sila_zbrojna }
+		x = 24
+		y = 1
+		cost = 10
+		completion_reward = {
+			GER = { country_event = { id = SLS_events.30 } }
+		}
+	}
+
+	focus = {
+		id = SLS_militaryzacja_przemyslu
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+			focus = SLS_roszczenia_zaolzie
+			focus = SLS_pakt_z_diablem
+		}
+		x = 23
+		y = 2
+		cost = 10
+		completion_reward = {
+			762 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = SLS_wezel_weglowy
+				add_idea = SLS_military_economy_idea
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_rewizja_granic
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = SLS_militaryzacja_przemyslu }
+		x = 23
+		y = 3
+		cost = 10
+		completion_reward = {
+			86 = { add_core_of = SLS }
+			90 = { add_core_of = SLS }
+			75 = { add_core_of = SLS }
+			create_wargoal = { type = annex_everything target = GER }
+		}
+	}
+
+	# =========================================================================
+	# BRANCH E: SEPARATIST "Twierdza Śląsk" (x=29)
+	# =========================================================================
+	focus = {
+		id = SLS_slask_dla_slazakow
+		icon = GFX_goal_generic_fortify_coastline
+		x = 29
+		y = 0
+		cost = 10
+		mutually_exclusive = {
+			focus = SLS_slaski_cud_gospodarczy
+			focus = SLS_strajk_generalny
+			focus = SLS_slaska_sila_zbrojna
+		}
+		completion_reward = {
+			add_ideas = SLS_oblenzona_twierdza_idea
+			POL = { add_opinion_modifier = { target = SLS modifier = SLS_hostile_50_opinion } }
+			GER = { add_opinion_modifier = { target = SLS modifier = SLS_hostile_50_opinion } }
+			CZE = { add_opinion_modifier = { target = SLS modifier = SLS_hostile_50_opinion } }
+		}
+	}
+
+	focus = {
+		id = SLS_wyrzucenie_kapitalu
+		icon = GFX_goal_generic_national_budget
+		prerequisite = { focus = SLS_slask_dla_slazakow }
+		x = 28
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.20
+			762 = {
+				remove_building = { type = industrial_complex level = 2 }
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_bariera_wisla_odra
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = SLS_slask_dla_slazakow }
+		x = 30
+		y = 1
+		cost = 10
+		completion_reward = {
+			762 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3534
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6803
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11440
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLS_totalna_samoobrona
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = SLS_wyrzucenie_kapitalu }
+		x = 28
+		y = 2
+		cost = 10
+		completion_reward = {
+			add_ideas = SLS_totalna_samoobrona_idea
+		}
+	}
+
+	focus = {
+		id = SLS_prewencyjne_uderzenie
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = SLS_bariera_wisla_odra }
+		x = 30
+		y = 2
+		cost = 10
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = POL }
+			create_wargoal = { type = annex_everything target = CZE }
+			create_wargoal = { type = annex_everything target = GER }
+		}
+	}
+
+	focus = {
+		id = SLS_hegemonia_z_wyrow
+		icon = GFX_goal_generic_war_with_capita
+		prerequisite = { focus = SLS_totalna_samoobrona }
+		prerequisite = { focus = SLS_prewencyjne_uderzenie }
+		x = 29
+		y = 3
+		cost = 10
+		available = {
+			has_war = no
+			OR = {
+				POL = { is_puppet_of = SLS }
+				GER = { is_puppet_of = SLS }
+				CZE = { is_puppet_of = SLS }
+			}
+		}
+		completion_reward = {
+			add_political_power = 300
+			add_stability = 0.15
+			add_war_support = 0.20
+			set_country_flag = SLS_hegemonia_achieved
+		}
+	}
+}

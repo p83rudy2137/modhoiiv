@@ -1,0 +1,53 @@
+capital = 762
+
+oob = "SLS_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	interwar_antitank = 1
+	basic_train = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.11.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 50
+	neutrality = 25
+	fascism = 15
+	communism = 10
+}
+
+add_ideas = {
+	SLS_wezel_weglowy
+	SLS_gornicza_tozsamosc
+}
+
+# Diplomatic relations
+set_relation = { who = POL value = 50 }
+set_relation = { who = CZE value = 20 }
+set_relation = { who = GER value = -30 }
+set_relation = { who = ENG value = 10 }
+set_relation = { who = FRA value = 10 }
+
+# Non-aggression pact with Poland
+diplomatic_relation = {
+	country = POL
+	relation = non_aggression_pact
+	active = yes
+}
+
+recruit_character = SLS_wojciech_korfanty
+recruit_character = SLS_komitet_robotniczy
+recruit_character = SLS_dowodztwo_powstancze

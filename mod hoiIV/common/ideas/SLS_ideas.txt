@@ -1,0 +1,111 @@
+ideas = {
+	country = {
+		SLS_wezel_weglowy = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.05
+				local_resources_factor = 0.20
+			}
+		}
+		SLS_gornicza_tozsamosc = {
+			picture = generic_goods_red_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				dig_in_speed_factor = 0.15
+				max_dig_in = 5
+				conscription = 0.01
+			}
+		}
+		SLS_oblenzona_twierdza_idea = {
+			picture = generic_fortify_the_borders
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.25
+				enemy_partisan_effect = -0.30
+				political_power_gain = 0.15
+			}
+		}
+		SLS_nacjonalizacja_kopaln_idea = {
+			picture = generic_central_management
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.25
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		SLS_gwardia_idea = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_core_attack_factor = 0.05
+			}
+		}
+		SLS_zbrojownia_idea = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				military_factory_construction_speed_factor = 0.20
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+		SLS_coal_export = {
+			picture = generic_goods_red_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				trade_opinion_factor = 0.25
+			}
+		}
+		SLS_czerwona_gwardia_idea = {
+			picture = generic_communist_army
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.03
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		SLS_militaryzm_idea = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.02
+				training_time_army_factor = -0.15
+			}
+		}
+		SLS_military_economy_idea = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_factory_max_efficiency_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+		SLS_totalna_samoobrona_idea = {
+			picture = generic_manpower_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.05
+				industrial_capacity_factory = -0.05
+				army_core_defence_factor = 0.15
+			}
+		}
+	}
+}
